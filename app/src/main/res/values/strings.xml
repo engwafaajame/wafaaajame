@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Exam </string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">eMuni</string>
+    <string name="nav_header_subtitle">hghghghge@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">setting </string>
+    <string name="share_text">share</string>
+    <string name="name1">رابط التطبيق  (exam) نزله الان مجاناً </string>
+    <string name="Login">login </string>
+    <string name="username">User Name</string>
+    <string name="password">Password</string>
+    <string name="register_user">register</string>
+    <string name="forget_password">  forget passward </string>
+    <string name="facebook_app_id">306379673290641</string>
+    <string name="fb_login_protocol_scheme">fb[APP_ID]</string>
+    <string name="press_again_to_exit">click once other to exit </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

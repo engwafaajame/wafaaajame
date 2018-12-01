@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SignUp">
+
+
+    <EditText
+        android:textStyle="bold"
+
+        android:layout_marginTop="40dp"
+        android:id="@+id/id"
+        android:text="رقم الطالب"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <EditText
+        android:textStyle="bold"
+        android:layout_marginTop="70dp"
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="اسم الطالب " />
+
+    <Button
+        android:layout_marginTop="80dp"
+        android:id="@+id/registerdata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="تسجيل البيانات" />
+
+    <Button
+        android:layout_marginTop="40dp"
+        android:id="@+id/loaddata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="تحميل البيانات" />
+
+    <Button
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:id="@+id/singup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="الدخول" />
+</LinearLayout>
