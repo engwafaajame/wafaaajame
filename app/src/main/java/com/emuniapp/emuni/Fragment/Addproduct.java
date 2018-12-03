@@ -1,5 +1,7 @@
 package com.emuniapp.emuni.Fragment;
 
+import android.app.AlertDialog;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,6 +20,7 @@ public class Addproduct extends Fragment {
     DatabaseHelper myDb;
     EditText editName,editSurname,editMarks ,editTextId,editText_productnumber;
     Button btnAddData;
+    Button btnviewAll;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,12 +33,54 @@ public class Addproduct extends Fragment {
         editText_productnumber=V.findViewById(R.id.editText_productnumber);
         editTextId = V.findViewById(R.id.editText_id);
         btnAddData = V.findViewById(R.id.button_add);
-        AddData();
+        btnviewAll = V.findViewById(R.id.button_viewAll);
 
+        AddData();
+        viewAll();
         return  V;
 
 
 
+    }
+
+
+
+    public void viewAll() {
+        btnviewAll.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Cursor res = myDb.getAllproductData();
+                        if(res.getCount() == 0) {
+                            // show message
+                            showMessage("Error","Nothing found");
+                            return;
+                        }
+
+                        StringBuffer buffer = new StringBuffer();
+                        while (res.moveToNext()) {
+                            buffer.append("Id :"+ res.getString(0)+"\n");
+                            buffer.append("Product Name :"+ res.getString(1)+"\n");
+                            buffer.append("Price :"+ res.getString(2)+"\n");
+                            buffer.append("product Number  :"+ res.getString(2)+"\n\n");
+
+                        }
+
+                        // Show all data
+                        showMessage("Data",buffer.toString());
+                    }
+                }
+        );
+    }
+
+
+    public void showMessage(String title,String Message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(Message);
+        builder.show();
     }
 
     public  void AddData() {
@@ -50,6 +95,7 @@ public class Addproduct extends Fragment {
                         if(isInserted == true) {
                             editName.setText("");
                             editSurname.setText("");
+                            editText_productnumber.setText("");
                             Toast.makeText(getActivity(), "Data Inserted", Toast.LENGTH_LONG).show();
                         }
                         else

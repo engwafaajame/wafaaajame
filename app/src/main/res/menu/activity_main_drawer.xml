@@ -4,27 +4,27 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-
-        <item
-            android:id="@+id/nav_addcatogory"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="add catogory " />
         <item
             android:id="@+id/nav_additem"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="add item  " />
+            android:icon="@drawable/ic_add_button_inside_black_circle"
+            android:title="اضافة تصنيف " />
         <item
-            android:id="@+id/nav_viewitem"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="view item " />
+            android:id="@+id/nav_addcatogory"
+            android:icon="@drawable/ic_add_button_inside_black_circle"
+            android:title="اضافة منتج " />
+
         <item
             android:id="@+id/nav_viewcatogory"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="view catogory " />
+            android:icon="@drawable/ic_view_list_button"
+            android:title="عرض التصنيفات" />
+        <item
+            android:id="@+id/nav_viewitem"
+            android:icon="@drawable/ic_view_list_button"
+            android:title="عرض المنتجات " />
         <item
             android:id="@+id/navnotification"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="view notification " />
+            android:icon="@drawable/ic_view_list_button"
+            android:title="عرض الاشعارات " />
     </group>
 
 

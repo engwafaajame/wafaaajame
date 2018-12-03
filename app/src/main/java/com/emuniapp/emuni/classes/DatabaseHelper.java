@@ -17,6 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_4 = "MARKS";
     public static final String TABLE_NAME1 = "catogory_table";
     public static final String TABLE_NAME2 = "product_table";
+    public static final String TABLE_NAME3 = "notification_table";
     public static final String COL_t1 = "ID";
     public static final String COL_t2 = "NAME";
     public static final String COL_t3 = "DECRIPTION";
@@ -27,14 +28,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLtab2_t4 = "PRODUCTNUMBER";
 
 
-
+    public static final String COLtab3_t1 = "ID";
+    public static final String COLtab3_t2 = "NotificationTEXT";
 
 
 
 
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, 2);
+        super(context, DATABASE_NAME, null, 4);
     }
 
     @Override
@@ -42,6 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,SURNAME TEXT,MARKS INTEGER)");
         db.execSQL("create table " + TABLE_NAME1 +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,DECRIPTION  TEXT)");
         db.execSQL("create table " + TABLE_NAME2+" (ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,PRICE TEXT,PRODUCTNUMBER TEXT )");
+        db.execSQL("create table " + TABLE_NAME3+" (ID INTEGER PRIMARY KEY AUTOINCREMENT,NotificationTEXT TEXT )");
 
     }
 
@@ -50,6 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME1);
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME2);
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME3);
 
         onCreate(db);
     }
@@ -81,6 +85,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+
+    public boolean insertnotificationData(String text) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLtab3_t2,text);
+        long result = db.insert(TABLE_NAME3,null ,contentValues);
+        if(result == -1)
+            return false;
+        else
+            return true;
+    }
+
+
     public boolean insertData(String name,String surname,String marks) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -99,6 +116,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
         return res;
+    }
+
+    public Cursor getListnotification() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME3, null);
+        return data;
+    }
+    public Cursor getListContents() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME1, null);
+        return data;
     }
 
     public Cursor getAllcatData() {

@@ -11,19 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText_name"
-        android:hint="اسم التصنيف"
+        android:hint="نص الاشعار"
         android:layout_alignTop="@+id/textView"
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView" />
-
-    <EditText
-        android:id="@+id/editText_surname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="69dp"
-        android:hint="وصف التصنيف" />
 
 
     <Button
@@ -32,8 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/button_viewAll"
-        android:layout_marginEnd="59dp"
-        android:text="اضافة تصنيف" />
+        android:layout_marginEnd="62dp"
+        android:text="اضافة اشعار " />
 
 
     <Button
@@ -42,13 +33,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="199dp"
-        android:text="عرض التصنيفات" />
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="90dp"
+        android:text="عرض الاشعارات" />
+
     <ListView
-        android:id="@+id/list_item"
-        android:layout_marginTop="250dp"
+        android:id="@+id/listViewnotification"
+        android:layout_marginTop="170dp"
         android:layout_width="match_parent"
+        android:divider="@color/colorPrimaryDark"
+        android:dividerHeight="2dp"
         android:layout_height="wrap_content">
 
     </ListView>

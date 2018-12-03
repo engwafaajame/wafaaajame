@@ -1,10 +1,7 @@
 package com.emuniapp.emuni;
 
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -16,17 +13,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Toast;
 
-import com.emuniapp.emuni.Fragment.AboutFragment;
 import com.emuniapp.emuni.Fragment.Addproduct;
 import com.emuniapp.emuni.Fragment.FragmentUtils;
-import com.emuniapp.emuni.Fragment.NewsFragment;
+import com.emuniapp.emuni.Fragment.HomeFragment;
 import com.emuniapp.emuni.Fragment.add_item;
 import com.emuniapp.emuni.Fragment.viewcatogory;
 import com.emuniapp.emuni.Fragment.viewitem;
-import com.emuniapp.emuni.Fragment.viewnotificatition;
+import com.emuniapp.emuni.Fragment.Viewnotificatition;
 import com.facebook.FacebookSdk;
 
 
@@ -45,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         ConnectivityManager conMgr = (ConnectivityManager) getSystemService (Context.CONNECTIVITY_SERVICE);
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
-            Fragment homeFragment =new add_item();
+            Fragment homeFragment =new HomeFragment();
             FragmentUtils.addFragment(this,R.id.container,homeFragment,true);
             FragmentUtils.replaceFragment(this,R.id.container,homeFragment,true);
 
@@ -130,7 +124,7 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if (id == R.id.navnotification) {
-            Fragment aboutFragment =new viewnotificatition();
+            Fragment aboutFragment =new Viewnotificatition();
             FragmentUtils.replaceFragment(this,R.id.container,aboutFragment,true);
 
 
