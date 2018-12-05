@@ -1,10 +1,15 @@
-package com.emuniapp.emuni;
+package com.emuniapp.myapplication;
 
+import android.app.Activity;
 import android.app.Application;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+
+/**
+ * Created by hp on 12/09/2017.
+ */
 
 public class MyApplication extends Application {
 
@@ -38,5 +43,11 @@ public class MyApplication extends Application {
         return anInstance;
     }
 
-
+    private static Activity mCurrentActivity = null;
+    public static Activity getCurrentActivity(){
+        return mCurrentActivity;
+    }
+    public void setCurrentActivity(Activity mCurrentActivity){
+        this.mCurrentActivity = mCurrentActivity;
+    }
 }
